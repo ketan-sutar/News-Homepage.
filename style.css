@@ -33,9 +33,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
+  padding: 15px 25px;
   width: 100%;
   border-radius: 8px;
+  margin-right: 15px;
 }
 
 #logo img {
@@ -47,6 +48,19 @@ section {
   display: flex;
   gap: 20px;
   padding-top: 10px;
+}
+
+#mobile-navbar {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+.mobile-nav-icon {
+  width: 4rem;
+  height: 2rem;
+}
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
 }
 
 #links a {
@@ -67,6 +81,7 @@ section {
   grid-template-columns: 2fr 1fr;
   padding: 0 60px;
   gap: 25px;
+  margin-bottom: -50px;
 }
 
 #left {
@@ -86,23 +101,26 @@ section {
   grid-template-columns: 1fr 1fr;
 }
 
-#lft h1{
-  font-family: 'Inter';
+#parts #lft {
+  width: 80%;
+}
+
+#lft h1 {
+  font-family: "Inter";
   font-size: 3.5vw;
   font-weight: 800;
   line-height: 50px;
-  padding-left: 5px;
+  padding-left: 1px;
 }
 
-#rgt p{
+#rgt p {
   font-size: 1vw;
   font-weight: 400;
   letter-spacing: 1px;
   color: var(--Grayish-blue);
-  
 }
 
-#rgt button{
+#rgt button {
   padding: 10px 15px;
   border: none;
   color: var(--Very-dark-blue);
@@ -114,10 +132,16 @@ section {
   font-weight: 600;
 }
 
+#rgt button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
 #right {
   background-color: black;
   color: white;
-  padding: 0 15px;
+  padding: 0 20px;
   width: 80%;
   padding-top: 15px;
   padding-bottom: 20px;
@@ -133,6 +157,10 @@ section {
   margin: 10px 0;
   font-size: 19px;
 }
+#right h5:hover {
+  color: var(--Soft-orange);
+  cursor: pointer;
+}
 
 #right p {
   font-size: 14px;
@@ -143,4 +171,282 @@ section {
 #right hr {
   margin: 35px 0;
   border-color: var(--Grayish-blue);
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0 10px; */
+  gap: 20px;
+  width: 100%;
+  padding-left: 130px;
+  padding-right: 50px;
+}
+
+#cols img {
+  width: 100px;
+}
+#cols h2 {
+  color: var(--Soft-red);
+  font-weight: 800;
+}
+#cols h6 {
+  color: black;
+  font-weight: 800;
+  font-size: 1vw;
+  padding-top: 10px;
+}
+#cols h6:hover {
+  color: var(--Soft-red);
+  cursor: pointer;
+}
+
+#cols #txt {
+  width: 70%;
+}
+
+#txts {
+  width: 80%;
+}
+#cols p {
+  color: var(--Grayish-blue);
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px 1px;
+  }
+
+  #nav {
+    /* display: none; */
+    width: 100%;
+    padding: 10px 10px;
+    margin-right: 15px;
+  }
+
+  #logo img {
+    height: 40px;
+    padding: 5px;
+  }
+
+  #nav {
+    position: relative;
+  }
+
+  #nav #links {
+    /* display: none; */
+    width: 90%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* transition */
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: start;
+    padding-right: 150px;
+  }
+
+  .active #nav #links {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .active #mobile-navbar .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+  .active #mobile-navbar .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+
+  #mobile-navbar {
+    display: block;
+    background: transparent;
+    cursor: pointer;
+  }
+  .mobile-nav-icon {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  #links ul {
+    list-style: none;
+    display: flex;
+  }
+
+  #links a {
+    color: black;
+    text-decoration: none;
+    font-size: 5vw;
+    font-weight: 500;
+  }
+
+  #links a:hover {
+    color: var(--Soft-red);
+  }
+
+  #first {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #left {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #left img {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  #left #parts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #lft h1 {
+    font-size: 10vw;
+    font-weight: 800;
+    line-height: 0.9;
+  }
+
+  #rgt p {
+    font-size: 3.5vw;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 15px 0;
+    line-height: 1.4;
+    color: var(--Dark-grayish-blue);
+  }
+
+  #rgt button {
+    padding: 10px 25px;
+    border: none;
+    color: var(--Very-dark-blue);
+    background-color: var(--Soft-red);
+    margin-top: 10px;
+    font-size: 3vw;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  #first #rg {
+    padding: 10px 25px;
+    width: 100%;
+  }
+
+  #right {
+    background-color: black;
+    color: white;
+    width: 100%;
+  }
+  #right h2 {
+    color: var(--Soft-orange);
+    font-size: 8vw;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  #right h5 {
+    margin: 10px 0;
+    font-size: 18.7px;
+  }
+  #right h5:hover {
+    color: var(--Soft-orange);
+    cursor: pointer;
+  }
+
+  #right p {
+    font-size: 13px;
+    font-weight: 400;
+    padding-right: 35px;
+    color: var(--Dark-grayish-blue);
+  }
+
+  #right hr {
+    margin: 35px 0;
+    border-color: var(--Grayish-blue);
+  }
+
+  #cards {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    margin-top: 80px;
+    padding: 10px 10px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  #cols {
+    width: 100%;
+  }
+  #cols img {
+    width: 100px;
+  }
+  #cols h2 {
+    color: var(--Soft-red);
+    font-weight: 700;
+    font-size: 8vw;
+  }
+  #cols h6 {
+    color: black;
+    font-weight: 800;
+    font-size: 4vw;
+    width: 100%;
+  }
+  #cols h6:hover {
+    color: var(--Soft-red);
+    cursor: pointer;
+  }
+
+  #cols #txt {
+    width: 100%;
+  }
+
+  #txts {
+    width: 80%;
+  }
+  #cols p {
+    color: var(--Dark-grayish-blue);
+    padding-top: 10px;
+    font-size: 12.5px;
+    font-weight: 400;
+    width: 100%;
+    padding-right: 0;
+  }
 }

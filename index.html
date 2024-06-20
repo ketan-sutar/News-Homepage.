@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News Homepage</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="mobile.css" /> -->
+
     <link rel="icon" href="/images/favicon-32x32.png" />
   </head>
   <body>
-    <section>
+    <section class="header">
       <navbar id="nav">
         <div id="logo">
           <img src="/images/logo.svg" alt="logo" />
@@ -23,25 +25,40 @@
           </ul>
         </div>
       </navbar>
+      <div id="mobile-navbar">
+        <ion-icon name="menu-outline" class="mobile-nav-icon" ></ion-icon>
+        <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+      </div>
     </section>
 
     <main>
       <div id="first">
         <div id="left">
-          <img src="/images/image-web-3-desktop.jpg" alt="" />
+          <picture>
+            <source
+              srcset="/images/image-web-3-mobile.jpg"
+              media="(max-width: 375px)"
+            />
+            <img src="/images/image-web-3-desktop.jpg" alt="" />
+          </picture>
+
           <div id="parts">
             <div id="lft">
-                <h1>The Bright  <br>Future of <br> Web 3.0?</h1>
+              <h1>The Bright Future of Web 3.0?</h1>
             </div>
+
             <div id="rgt">
-                <p>We dive into the next evolution of the web  that <br>claims to put the power of the platforms back <br>into the hands of the people. But is it really <br> fulfilling its promise?</p>
-                <button>Read More</button>
-
-
-
+              <p>
+                We dive into the next evolution of the web that <br />claims to
+                put the power of the platforms back <br />into the hands of the
+                people. But is it really <br />
+                fulfilling its promise?
+              </p>
+              <button>Read More</button>
             </div>
           </div>
         </div>
+
         <div id="rg">
           <div id="right">
             <h2>New</h2>
@@ -66,6 +83,54 @@
           </div>
         </div>
       </div>
+
+      <div id="cards">
+        <div id="cols">
+          <img src="/images/image-retro-pcs.jpg" alt="" />
+        </div>
+        <div id="cols">
+          <div id="txt">
+            <h2>01</h2>
+            <h6>Reviving Retro PCs</h6>
+            <p>What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+
+        <div id="cols">
+          <img src="/images/image-top-laptops.jpg" alt="" />
+        </div>
+        <div id="cols">
+          <div id="txt">
+            <h2>02</h2>
+            <h6>Top 10 Laptops of 2022</h6>
+            <p>Our best picks for various needs anad budgets.</p>
+          </div>
+        </div>
+
+        <div id="cols">
+          <img src="/images/image-gaming-growth.jpg" alt="" />
+        </div>
+        <div id="cols">
+          <div id="txts">
+            <h2>03</h2>
+            <h6>The Growth of Gaming</h6>
+            <p>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </div>
     </main>
+
+
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  <script src="script.js"></script>
   </body>
 </html>
